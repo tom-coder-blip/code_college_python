@@ -177,3 +177,35 @@ for city, info in cities.items():
     print(f"Country: {info['country']}")
     print(f"Population: {info['population']}")
     print(f"Fact: {info['fact']}")
+
+
+
+car_1 = {
+    "brand": "Toyota",
+    "model" : "Corolla",
+    "year": 2020,
+    "color": "Blue"
+}
+
+car_2 = {
+    "brand": "Honda",
+    "model": "Civic",
+    "year": "2018",
+    "color": "Red"
+}
+
+car_3 = {
+    "brand": "Ford",
+    "model": "Civic",
+    "year": 2018,
+    "color": "Red"
+}
+
+cars = [car_1, car_2, car_3]
+
+for car in cars:
+    print(f"Brand: {car['brand']}")
+    print(f"Model: {car['model']}")
+    print(f"Year: {car['year']}")
+    print(f"Color: {car['color']}")
+    print()

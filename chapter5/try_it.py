@@ -1,4 +1,4 @@
-#EXERCISE 5-3 ALIEN COLORS 1
+#EXERCISE 5-3 ALIEN COLORS 1 
 alien_color = 'green'
 
 if alien_color == 'green':
@@ -59,7 +59,7 @@ if "watermelon" in favorite_fruits:
 if "apple" in favorite_fruits:
     print("You really like apples!")
 
-if "grapes" in favorite_fruits:
+if "grapes" in favorite_fruits: 
     print("You really like grapes!")
 
 

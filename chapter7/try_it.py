@@ -86,6 +86,7 @@ def dream_vacation_poll():
         responses[name] = destination
         
         repeat = input("Would you like to let another person respond? (yes/no) ")
+        
         if repeat.lower() != 'yes':
             break
     
