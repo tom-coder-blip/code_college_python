@@ -38,6 +38,7 @@ class AlienInvasion:
 
         # Start Alien Invasion in an inactive state.
         self.game_active = False
+        self.game_paused = False  # <---- ADD THIS
 
         # Make the Play button.
         self.play_button = Button(self, "Play")
@@ -47,7 +48,8 @@ class AlienInvasion:
         while True:
             self._check_events()
 
-            if self.game_active:
+            # this prevents certain updates from happening while the game is paused
+            if self.game_active and not self.game_paused:  # <---- ADD THIS CHECK
                 self.ship.update()
                 self._update_bullets()
                 self._update_aliens()
@@ -103,6 +105,8 @@ class AlienInvasion:
             sys.exit()
         elif event.key == pygame.K_SPACE:
             self._fire_bullet()
+        elif event.key == pygame.K_p:  # <---- ADD THIS
+            self._toggle_pause()
 
     def _check_keyup_events(self, event):
         """Respond to key releases."""
@@ -110,6 +114,11 @@ class AlienInvasion:
             self.ship.moving_right = False
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = False
+
+    def _toggle_pause(self):
+        """Pause or resume the game."""
+        if self.game_active:  # Only pause if the game is running
+            self.game_paused = not self.game_paused 
 
     def _fire_bullet(self):
         """Create a new bullet and add it to the bullets group."""
@@ -245,10 +254,22 @@ class AlienInvasion:
         if not self.game_active:
             self.play_button.draw_button()
 
+            # Show "Paused" text if the game is paused
+        if self.game_paused:
+            self._show_pause_message()
+
         pygame.display.flip()
+
+    def _show_pause_message(self):
+        """Display 'Paused' text on the screen."""
+        font = pygame.font.SysFont(None, 48)
+        pause_text = font.render("PAUSED", True, (255, 255, 255))
+        text_rect = pause_text.get_rect()
+        text_rect.center = self.screen.get_rect().center
+        self.screen.blit(pause_text, text_rect)
 
 
 if __name__ == '__main__':
     # Make a game instance, and run the game.
     ai = AlienInvasion()
-    ai.run_game()
+    ai.run_game() 
