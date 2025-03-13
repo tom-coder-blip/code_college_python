@@ -32,9 +32,8 @@ class RandomWalk:
         while len(self.x_values) < self.num_points:
 
             # Use the get_step() method to determine the step in both x and y directions.
-            x_step = self.get_step()  # Get x step
-            y_step = self.get_step()  # Get y step
-
+            x_step = self.get_step()  
+            y_step = self.get_step()
             # Reject moves that go nowhere.
             if x_step == 0 and y_step == 0:
                 continue

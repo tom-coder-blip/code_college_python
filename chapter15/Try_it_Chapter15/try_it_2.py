@@ -10,7 +10,7 @@ plt.style.use('seaborn-v0_8')
 fig, ax = plt.subplots()
 
 # Use a colormap for styling
-ax.scatter(x_values, y_values, c=y_values, cmap=plt.cm.viridis, s=10)
+ax.scatter(x_values, y_values, c=y_values, cmap=plt.cm.viridis, s=15)
 
 # Set chart title and label axes
 ax.set_title("Colored Cubic Numbers", fontsize=24)
