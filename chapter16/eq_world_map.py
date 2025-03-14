@@ -31,4 +31,4 @@ fig = px.scatter_geo(lat=lats, lon=lons, size=mags, title=title,
         projection='natural earth',
         hover_name=eq_titles,
     )
-fig.show() 
+fig.show()  
