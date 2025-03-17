@@ -1,0 +1,34 @@
+<!-- This template contains all elements common to all pages. Other templates inherit from this to maintain a consistent structure across pages.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Learning Log{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <p>
+            <a href="{% url 'learning_logs:index' %}">Learning Log</a> 
+            <a href="{% url 'learning_logs:topics' %}">Topics</a>
+            {% if user.is_authenticated %}
+                Hello, {{ user.username }}.
+                <hr />
+                <form action="{% url 'accounts:logout' %}" method="post">
+                    {% csrf_token %}
+                    <button name="submit">Log out</button>
+                </form>
+            {% else %}
+                <a href="{% url 'accounts:register' %}">Register</a> -
+                <a href="{% url 'accounts:login' %}">Log in</a>
+            {% endif %}
+        </p>
+    </header>
+
+    <hr>
+
+    {% block content %}{% endblock content %}
+
+</body>
+</html> 

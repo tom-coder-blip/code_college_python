@@ -1,0 +1,7 @@
+{% extends 'pizzas/base.html' %}
+
+{% block content %}
+    <h2>Welcome to Pizzeria!</h2>
+    <p>Explore our delicious pizzas and their tasty toppings.</p>
+    <a href="{% url 'pizzas_list' %}">View Pizzas</a>
+{% endblock %}
