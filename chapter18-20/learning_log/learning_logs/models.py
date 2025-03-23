@@ -22,7 +22,7 @@ class Entry(models.Model):
     
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE)  # Links each entry to a topic
     text = models.TextField()  # Stores user input (no length limit)
-    date_added = models.DateTimeField(auto_now_add=True)  # Stores timestamp when entry is created
+    date_added = models.DateTimeField(auto_now_add=True)  # Stores timestamp when entry is created 
 
     class Meta:
         verbose_name_plural = 'entries'  # Ensures "Entries" is used instead of "Entrys"   

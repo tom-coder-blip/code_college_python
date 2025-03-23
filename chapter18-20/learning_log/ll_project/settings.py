@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     # My apps
     'learning_logs',  #Placing your app before the default Django apps ensures that custom behaviors take precedence.
     'accounts',
+    # Third-party apps
+    'django_bootstrap5',
     # Default Django apps
     'django.contrib.admin',
     'django.contrib.auth',
